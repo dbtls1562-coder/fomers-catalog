@@ -2034,4 +2034,16 @@ function renderAdminDashboard(){
 </script>
 
 </body>
+<script>
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var blocked =
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && ['I','J','C'].indexOf(e.key.toUpperCase()) > -1) ||
+    (e.ctrlKey && e.key.toUpperCase() === 'U');
+  if(blocked) e.preventDefault();
+});
+console.log('%c이 콘솔은 관리자 전용입니다. 무단 데이터 수집을 금지합니다.', 'color:#B23A2E;font-weight:bold;font-size:14px;');
+</script>
+
 </html>
